@@ -4,3 +4,7 @@
 <app-counter></app-counter>
 <app-counter-app></app-counter-app>
 <app-home-page2></app-home-page2>
+<div class="container" style="border: 1px solid black; padding: 10px; border-radius: 5px;">
+<app-component1 (carAdded)="oncarAdded($event)"></app-component1>
+<app-component2 [carnames]="carName"></app-component2>
+</div>

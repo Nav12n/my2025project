@@ -1,0 +1,12 @@
+<h2>Car List</h2>
+@for (car of carnames; track $index) {
+    {{car}}
+}
+
+@if (carnames.length > 0) {
+<ul>
+    <li *ngFor="let car of carnames">{{car}}</li>
+</ul>}
+@else {
+    <p>No car data available </p>
+}
