@@ -1,0 +1,75 @@
+<h1>Structural Directives</h1>
+<h1>ngFor example</h1>
+<ul>
+    <li *ngFor="let movie of movies">
+        {{movie}}
+    </li>
+</ul>
+
+<h1>ng Variable</h1>
+<h2>index example</h2>
+<ul>
+    <!--index-->
+    <li *ngFor="let fruit of fruits;let i =index">
+        {{i+1}} {{fruit}}</li>
+</ul>
+<!--first and last variables-->
+<h2>first and last example</h2>
+<ul>
+    <li *ngFor="let fruit of fruits;let isFirst = first;let isLast = last">
+      <strong *ngIf="isFirst">First:</strong> 
+      <strong *ngIf="isLast">Last:</strong>  
+      {{fruit}}
+      
+    </li>
+</ul>
+
+<!--Even and odd variables-->
+<h2>even and odd example</h2>
+<ul>
+    <li *ngFor="let fruit of fruits;let isEven = even;let isOdd = odd" 
+    [ngClass]="{'even_item':isEven,'odd_item':isOdd}" >
+      {{fruit}}
+      
+    </li>
+</ul>
+
+<h1>ngIf example</h1>
+<input type="checkbox" [(ngModel)]="showme"> Show
+<p *ngIf="showme">can you see me?</p>
+<hr>
+
+<h1>attribute directives</h1>
+<h2>ngClass</h2>
+<p [ngClass]="['primary','big']">Sample Text</p>
+<input type="checkbox" [(ngModel)]="applyred">Applyred
+<p [ngClass]="{'primary':applyred}">Sample Text</p>
+
+<h2>ngStyle</h2>
+<p [ngStyle]="{'color':'red','font-size':'larger'}">
+    sample Text</p>
+
+<!-- <h2>custom Directive</h2>
+    <p [appHighlightdiretives]="''">
+       hover over this text to see highlight effect
+    </p>-->
+
+<h1>pipe</h1>
+<h2>date Pipe</h2>
+<p>{{toDate|date}}</p>
+<p>{{toDate|date:'fullDate'}}</p>
+<p>{{toDate|date:'longDate'}}</p>
+<p>{{toDate|date:'medium'}}</p>
+<p>{{toDate|date:'short'}}</p>
+<p>{{toDate|date:'shortDate'}}</p>
+<p>{{toDate|date:'shortTime'}}</p>
+<hr>
+<h2>slice pipe</h2>
+{{title}}
+<p>getting hello: {{title|slice:0:7}}</p>
+<ul>
+    <li *ngFor="let movie of movies |slice:0:3">{{movie}}</li>
+</ul>
+
+
+

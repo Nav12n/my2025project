@@ -1,0 +1,13 @@
+.even_item{
+    background-color: red;
+}
+.odd_item{
+    background-color: green;
+}
+
+.primary{
+    color: darkred;
+}
+.big{
+    font-size: larger;
+}
