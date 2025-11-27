@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { ServiceLearn } from '../../service/service-learn';
 
 
 @Component({
@@ -9,5 +10,17 @@ import { Component, Input } from '@angular/core';
   styleUrl: './component2.css',
 })
 export class Component2 {
-@Input() carnames:string[]=[];
+  //using decorator
+//@Input() carnames:string[]=[];
+
+//using service
+carnames:string[]=[];
+constructor(private carservice:ServiceLearn){}
+
+ngOnInit():void{
+  this.carservice.carNames$.subscribe(names=>{
+    this.carnames=names;
+  })
+}
+
 }
