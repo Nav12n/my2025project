@@ -1,0 +1,19 @@
+<h2>Pots</h2>
+<h3>Add-Post</h3>
+<form (submit)="onsubmit()">
+    <label for="">Title</label> &nbsp;
+    <input type="text" placeholder="title" name="title" [(ngModel)]="newPost.title"><br>
+    <label for="">Body</label>&nbsp;
+    <input type="textarea" placeholder="text-content" name="body" [(ngModel)]="newPost.body">
+    <button >Create</button>
+</form>
+
+<ul *ngIf="Posts.length>0;else nopost">
+    <li *ngFor="let post of Posts">
+        <div style="border: 1px solid black; padding: 10px; border-radius: 5px;">
+            <strong>{{post.title}}</strong> - <div><button>Edit</button>  <button>Delete</button></div>
+            <div style="border: 1px solid black; padding: 10px;">{{post.body}}</div>
+        </div>
+    </li>
+</ul>
+<ng-template #nopost> Loading Posts.....</ng-template>

@@ -8,11 +8,12 @@ import { Component1 } from "./inandout/component1/component1";
 import { Component2 } from "./inandout/component2/component2";
 import { FormCar } from "./learn-Service/form-car/form-car";
 import { ListCar } from "./learn-Service/list-car/list-car";
+import { Post } from "./http/post/post";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomePage, Counter, CounterApp, HomePage2, Component1, Component2, FormCar, ListCar],
+  imports: [RouterOutlet, HomePage, Counter, CounterApp, HomePage2, Component1, Component2, FormCar, ListCar, Post],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
