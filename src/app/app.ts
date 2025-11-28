@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLinkWithHref, RouterLink } from '@angular/router';
 import { HomePage } from "./home/home-page/home-page";
 import { Counter } from "./home/counter/counter";
 import { CounterApp } from "./signal/counter-app/counter-app";
@@ -9,11 +9,12 @@ import { Component2 } from "./inandout/component2/component2";
 import { FormCar } from "./learn-Service/form-car/form-car";
 import { ListCar } from "./learn-Service/list-car/list-car";
 import { Post } from "./http/post/post";
+import { ReactiveForms } from "./reactive-forms/reactive-forms";
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomePage, Counter, CounterApp, HomePage2, Component1, Component2, FormCar, ListCar, Post],
+  imports: [RouterOutlet, HomePage, Counter, CounterApp, HomePage2, Component1, Component2, FormCar, ListCar, Post, ReactiveForms, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
